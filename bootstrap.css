@@ -1,0 +1,53 @@
+<?php 
+$conn = mysqli_connect("localhost", "root", "", "crude");
+
+if (!empty($_POST['submit'])){
+  $a = $_POST['Name'];
+  $b = $_POST['Email'];
+  $c = $_POST['Mobile'];
+  $d = $_POST['Pasword'];
+  
+  
+  $sql = "INSERT INTO crudetabel(Name, Email, Mobile,Pasword)VALUES ('$a','$b','$c', 'd')";
+  
+   mysqli_query($conn, $sql) or die  (mysqli_error));
+
+
+}
+?>
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Crude Opretion</title>
+  </head>
+  <body>
+  <div class="container my-5">
+    <form method="POST"> 
+  <div class="form-group">
+    <label>Name</label>
+ <input type="text" class="form-control" placeholder="Enter Your Name" name="Name" autocomplete="off"> 
+  </div>
+  <div class="form-group">
+    <label>Email</label>
+ <input type="text" class="form-control" placeholder="Enter Your Email" name="Email" autocomplete="off"> 
+  </div>
+  <div class="form-group">
+    <label>Mobile</label>
+ <input type="text" class="form-control" placeholder="Mobile" name="Mobile" autocomplete="off"> 
+ <div class="form-group">
+    <label>Pasword</label>
+ <input type="Pasword" class="form-control" placeholder="Enter Your Pasword" name="Pasword" autocomplete="off"> 
+  </div>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form> 
+  </div>
+  </body>
+</html>
